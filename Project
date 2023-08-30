@@ -1,0 +1,18 @@
+import board
+import analogio as aio
+import time
+import pwmio
+#i dont know what i'm doing
+max = 65535
+min = 256
+pot = aio.AnalogIn(board.A1)
+norm = ((pot.value - min)/(max-min+1))
+led = pwmio.PWMOut(board.LED, frequency=pot.value, duty_cycle=0)
+
+while True:
+	print(pot.value)
+	time.sleep(0.1)
+	print(norm)
+	
+	
+
