@@ -1,0 +1,9 @@
+import board
+import analogio as aio
+import time
+
+pot = aio.AnalogIn(board.A1)
+
+while True:
+	print(pot.value)
+	time.sleep(0.1)
